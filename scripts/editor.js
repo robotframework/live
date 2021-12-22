@@ -46,10 +46,22 @@ class MonacoEditor extends HTMLElement {
         // window.editor is accessible.
         var init = () => {
             require(['vs/editor/editor.main'], () => {
-                //console.log(monaco.languages.getLanguages().map(lang => lang.id));
-                // Editor
+
+                monaco.editor.defineTheme('rf-dark', {
+                    base: 'hc-black',
+                    inherit: true,
+                    rules: [
+                        { background: '292f33' },
+                        { token: 'delimiter', foreground: '3b94d9', fontStyle: 'italic' },
+                        { token: 'variable', foreground: '77c7f7', fontStyle: 'italic' },
+                        { token: 'type.robotframework', foreground: 'd0d0d0', fontStyle: 'italic' },
+                    ],
+                    colors: {
+                        'editor.background': '#292f33',
+                    }
+                });
                 this.editor = monaco.editor.create(editor, {
-                    theme: 'vs-dark', //(window.getComputedStyle(document.querySelector("body")).colorScheme === 'dark') ? "rf-dark" : "vs",
+                    theme: 'rf-dark', //(window.getComputedStyle(document.querySelector("body")).colorScheme === 'dark') ? "rf-dark" : "vs",
                     //model: monaco.editor.createModel(this.getAttribute("value"), this.getAttribute("language")),
                     value: this.getAttribute("value"),
                     language: this.getAttribute("language"),
@@ -62,9 +74,7 @@ class MonacoEditor extends HTMLElement {
                         vertical: 'auto'
                     },
                 });
-
                 this.editor.getModel().updateOptions({ tabSize: 4 });
-
                 this.editor.addCommand(
                     monaco.KeyCode.Tab, () => {
                         this.editor.trigger('keyboard', 'type', { text: "    " });

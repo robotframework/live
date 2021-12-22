@@ -1,22 +1,4 @@
 require(['vs/editor/editor.main'], () => {
-
-    monaco.editor.defineTheme('rf-dark', {
-        base: 'hc-black',
-        inherit: true,
-        rules: [
-            { background: '292f33' },
-            { token: 'delimiter', foreground: '3b94d9', fontStyle: 'italic' },
-            { token: 'variable', foreground: '77c7f7', fontStyle: 'italic' },
-            { token: 'type.robotframework', foreground: 'd0d0d0', fontStyle: 'italic' },
-
-
-        ],
-        colors: {
-            'editor.background': '#292f33',
-        }
-    });
-    monaco.editor.setTheme('rf-dark');
-
     monaco.languages.register({ id: 'robot' });
     monaco.languages.setMonarchTokensProvider('robot', {
         defaultToken: 'string',

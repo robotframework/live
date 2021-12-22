@@ -75,13 +75,13 @@ function addFileToFileCatalog(folder, fileName) {
 }
 
 function loadFileToPythonProgram() {
-    fetch('PythonProgram.py')
+    fetch('python/PythonProgram.py')
         .then(response => response.text())
         .then(result => { pythonProgram = result; });
 }
 
 function loadFileToLibDoc() {
-    fetch('LibDoc.py')
+    fetch('python/LibDoc.py')
         .then(response => response.text())
         .then(result => { libDoc = result; });
 }
