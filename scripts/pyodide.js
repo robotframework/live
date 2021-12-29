@@ -1,6 +1,4 @@
-const fileList = [
-    'InPageLibrary.py'
-]
+const fileList = ['TestObject.py']
 var folderName = 'Example'
 
 const output = document.getElementById("output");
@@ -75,7 +73,7 @@ function addFileToFileCatalog(folder, fileName) {
 }
 
 function loadFileToPythonProgram() {
-    fetch('python/PythonProgram.py')
+    fetch('python/executeRobot.py')
         .then(response => response.text())
         .then(result => { pythonProgram = result; });
 }
@@ -105,10 +103,9 @@ function clearLogHtml() {
     logFrame.src = "data:text/html;charset=utf-8," + escape("<html><body></body></html>");
 }
 
-function writeToOutput(con_out) {
-    std_output = con_out["std_output"]
-    if (!std_output) return;
-    const html = ansi_up.ansi_to_html(std_output);
+function writeToOutput(console_output) {
+    if (!console_output) return;
+    const html = ansi_up.ansi_to_html(console_output);
     output.innerHTML += html;
     //console.log(con_out)
 }
@@ -119,7 +116,7 @@ function clearOutput() {
 
 function run(script, context, onSuccess, onError) {
     if (!pyodideWorker) {
-        pyodideWorker = new Worker("./py_worker.js");
+        pyodideWorker = new Worker("./scripts/py_worker.js");
     }
     pyodideWorker.onerror = onError;
     pyodideWorker.onmessage = (e) => onSuccess(e.data);
@@ -201,7 +198,7 @@ const handleKeywordCall = (data) => {
 
 async function runRobot() {
     clearOutput();
-    writeToOutput({ std_output: "Starting..\n" });
+    writeToOutput("Initializing...\n");
     clearLogHtml();
     updateFileCatalog();
     await asyncRun(pythonProgram, {file_catalog: JSON.stringify(fileCatalog)}, (data) => {
@@ -211,12 +208,12 @@ async function runRobot() {
             handleKeywordCall(data);
             return;
         }
-        writeToOutput(data);
+        writeToOutput(data["std_output"]);
         if (data.hasOwnProperty("html")) {
             updateLogHtml(data["html"]);
         }
     });
-    writeToOutput({ std_output: "\nReady!" });
+    writeToOutput("\nReady!");
 }
 
 async function runLibDoc() {

@@ -74,8 +74,9 @@ try:
         sys.stdout = sys.__stdout__ = StringIO()
         sys.stderr = sys.__stderr__ = sys.__stdout__
         for name in file_catalog_dict:
-            file_name, file_ext = os.path.splitext(name)
+            file_name, file_ext = os.path.splitext(name)  # TODO: does not work correctly
             if file_ext == ".py":
+                js.console.log(f'reimporting: {name}')
                 m = import_module(file_name)
                 m = reload(m)
         run(
