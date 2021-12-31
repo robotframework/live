@@ -10,17 +10,25 @@ async function loadPyodideAndPackages() {
   let start = Date.now()
   if (!self.pyodide) {
     self.pyodide = await loadPyodide({
-      indexURL: "https://cdn.jsdelivr.net/pyodide/v0.18.1/full/",
+        indexURL: "https://cdn.jsdelivr.net/pyodide/v0.18.1/full/",
     });
   }
   console.log(`LOAD Mircopip after ${Date.now() - start}ms`)
   await self.pyodide.loadPackage(["micropip"]);
   console.log(`DONE after ${Date.now() - start}ms`)
+  self.pyodide.globals.set('init_globals', Array.from(self.pyodide.globals.toJs().keys()));
 }
 const pyodideReadyPromise = loadPyodideAndPackages();
 
 self.onmessage = async (event) => {
   await pyodideReadyPromise;
+  self.pyodide.runPython(`
+import js
+for key in list(globals().keys()):
+    if key not in init_globals and key not in ['init_globals', 'js', 'sys']:
+        js.console.log(f"DEL: {key}")
+        del globals()[key]
+`);
   const { python, ...context } = event.data;
   for (const key of Object.keys(context)) {
     self.pyodide.globals.set(key, context[key]);

@@ -1,6 +1,7 @@
-import micropip
 import sys
 import js
+import importlib
+import micropip
 import json
 import os
 import traceback
@@ -39,14 +40,14 @@ class Listener:
 
 
 try:
-    from robot import run, __version__
+    import robot
 except ImportError:
     js.postMessage(json.dumps({"std_output": "Install Robot Framework Stack Trace\n"}))
     js.postMessage(json.dumps({"std_output": f"Install Robot Framework"}))
     await micropip.install("robotframework-stacktrace")
-    from robot import run, __version__
+    import robot
 
-    js.postMessage(json.dumps({"std_output": f" = version {__version__}\n"}))
+    js.postMessage(json.dumps({"std_output": f" = version {robot.__version__}\n"}))
 
 try:
 
@@ -79,7 +80,8 @@ try:
                 js.console.log(f'reimporting: {name}')
                 m = import_module(file_name)
                 m = reload(m)
-        run(
+
+        result = robot.run(
             "test.robot",
             consolecolors="ansi",
             listener=["RobotStackTracer", Listener()],
@@ -90,7 +92,9 @@ try:
             removekeywords="tag:REMOVE",
             flattenkeywords="tag:FLAT",
         )
+        js.console.log(f"result: {result}")
     except Exception as e:
+        js.console.log(f"exception: {e}")
         traceback.print_exc(file=sys.__stdout__)
     finally:
         std_output = sys.__stdout__.getvalue()

@@ -1,31 +1,31 @@
 from robot.libraries.BuiltIn import BuiltIn
+from TestObject import t, UserRight
 
 b = BuiltIn()
 
 
 class CustomLibrary:
 
-    ROBOT_LISTENER_API_VERSION = 2
-    ROBOT_LIBRARY_LISTENER: "CustomLibrary"
-    ROBOT_LIBRARY_SCOPE = "GLOBAL"
+    ROBOT_LIBRARY_SCOPE = "SUITE"
 
     def __init__(self) -> None:
-        b.log_to_console("l: Init")
+        self.session = ""
 
-    def start_suite(self, name, args):
-        b.log_to_console(f"l start_suite: {name}")
+    def login_user(self, login, password):
+        self.session = t.authenticate(login, password)
 
-    def start_test(self, name, args):
-        b.log_to_console(f"l start_test: {name}")
 
-    def start_keyword(self, name, args):
-        b.log_to_console(f"l start_keyword: {name}")
+    def get_all_users(self):
+        return t.get_user_all(self.session)
 
-    def end_keyword(self, name, args):
-        b.log_to_console(f"l end_keyword: {name}")
 
-    def end_test(self, name, args):
-        b.log_to_console(f"l end_test: {name}")
+    def create_new_user(
+        self, name, login, password, right: UserRight
+    ):
+        user_id = t.post_new_user(self.session, name, login)
+        t.put_user_password(self.session, password, user_id)
+        t.put_user_right(self.session, right, user_id)
 
-    def end_suite(self, name, args):
-        b.log_to_console(f"l end_suite: {name}")
+
+    def get_userdetails(self, user_id=None):
+        return t.get_user(self.session, user_id)
