@@ -1,0 +1,19 @@
+{
+    "name": "Example with Classes",
+    "description": "ReadMe.md",
+    "files": [
+        {
+            "fileName": "test.robot",
+        },
+        {
+            "fileName": "keywords.resource"
+        },
+        {
+            "fileName": "CustomLibrary.py"
+        },
+        {
+            "fileName": "TestObject.py",
+            "show": false
+        }
+    ]
+}
