@@ -157,7 +157,6 @@ require(['vs/editor/editor.main'], () => {
             }
             return {
                 label: keyword.name,
-                //kind: monaco.languages.CompletionItemKind.Function,
                 kind: monaco.languages.CompletionItemKind.Function,
                 documentation: { value: `*(${library}):*\n\n**Arguments:**\n` + argDoc + "\n**Documentation:**\n\n" + keyword.doc },
                 insertText: `${keyword.name}${args}`,

@@ -144,6 +144,8 @@ if ((new URL(document.location)).searchParams.get('fileCatalog')) {
 } else {
     updateEditors(folderName);
 }
+document.getElementById('description').innerHTML =
+      marked.parse('# Marked in the browser\n\nRendered by **marked**.');
 clearLogHtml()
 
 async function runRobot(initialize=false) {

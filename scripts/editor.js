@@ -71,7 +71,7 @@ class MonacoEditor extends HTMLElement {
                         enabled: false
                     },
                     scrollbar: {
-                        vertical: 'auto'
+                        vertical: 'hidden'
                     },
                 });
                 this.editor.getModel().updateOptions({ tabSize: 4 });
