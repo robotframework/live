@@ -51,12 +51,10 @@ except ImportError:
 try:
 
     def write_file(file):
-        js.console.log(file)
-        with open(file.fileName, "w") as f:
-            f.writelines(file.content)
+        with open(file['fileName'], "w") as f:
+            f.writelines(file['content'])
 
     file_list = json.loads(file_catalog)
-    js.console.log(file_catalog)
 
     for file in file_list:
         write_file(file)
