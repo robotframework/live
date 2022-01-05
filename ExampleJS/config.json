@@ -3,7 +3,7 @@
     "description": "readme.md",
     "files": [
         {
-            "fileName": "test.robot",
+            "fileName": "test.robot"
         },
         {
             "fileName": "page.html"

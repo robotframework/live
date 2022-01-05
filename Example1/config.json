@@ -3,7 +3,7 @@
     "description": "ReadMe.md",
     "files": [
         {
-            "fileName": "test.robot",
+            "fileName": "test.robot"
         },
         {
             "fileName": "keywords.resource"
