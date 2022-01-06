@@ -65,16 +65,23 @@ class MonacoEditor extends HTMLElement {
                     //model: monaco.editor.createModel(this.getAttribute("value"), this.getAttribute("language")),
                     value: this.getAttribute("value"),
                     language: this.getAttribute("language"),
-                    wordWrap: 'on',
-                    automaticLayout: true,
+                    wordWrap: 'wordWrapColumn',
+                    wordWrapColumn: 40,
+
+                    // Set this to false to not auto word wrap minified files
+                    wordWrapMinified: true,
+
+                    // try "same", "indent" or "none"
+                    wrappingIndent: 'indent',
                     minimap: {
                         enabled: false
                     },
                     scrollbar: {
-                        vertical: 'hidden'
+                        vertical: 'hidden',
+                        horizontal: 'visible'
                     },
                 });
-                this.editor.getModel().updateOptions({ tabSize: 4 });
+                this.editor.getModel().updateOptions({ tabSize: 4, wordWrap: 'off' });
                 this.editor.addCommand(
                     monaco.KeyCode.Tab, () => {
                         this.editor.trigger('keyboard', 'type', { text: "    " });

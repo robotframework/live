@@ -1,5 +1,5 @@
 const fileList = ['TestObject.py']
-var folderName = 'Example'
+var folderName = 'Example1'
 
 const output = document.getElementById("output");
 const editorElements = document.getElementsByTagName("monaco-editor");
@@ -18,7 +18,7 @@ function updateFolder(el){
 function updateEditors(folder){
     folderName = folder
     for (let editorElement of editorElements) {
-        loadFileToValue(folder, editorElement);
+        loadFileToValue("Examples/" + folder, editorElement);
     }
     initializeFileCatalog(folder);
 }
@@ -61,7 +61,7 @@ async function copyFileCatalog() {
 }
 
 function addFileToFileCatalog(folder, fileName) {
-    fetch(folder + "/" + fileName)
+    fetch("Examples/" + folder + "/" + fileName)
         .then(response => response.text())
         .then(result => { fileCatalog[fileName] = result; });
 }
