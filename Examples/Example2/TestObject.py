@@ -81,16 +81,19 @@ class Session:
 
 class TestObject:
     def __init__(self) -> None:
-        admin: User = User("Administrator", "admin")
-        admin.password = "@RBTFRMWRK@"
-        admin.right = ADMIN
-        user: User = User("Member1", "mem1")
-        user.password = "1234567890"
-        user.right = USER
         self.user_ids: Dict[str, str] = {}
         self.users: Dict[str, User] = {}
         self.user_sessions: Dict[str, User] = {}
-        self._add_user(admin)
+        self._create_user("Administrator", "admin", "@RBTFRMWRK@", ADMIN)
+        self._create_user("Bruce Banner", "hulk", "Hulk...SMASH!", USER)
+        self._create_user("Stephen Strange", "dr.strange", "1234567890", USER)
+        self._create_user("Steve Rogers", "captain", "1234567890", USER)
+        self._create_user("Tony Stark", "ironman", "1234567890", USER)
+
+    def _create_user(self, name, login, password, right):
+        user: User = User(name, login)
+        user.password = password
+        user.right = right
         self._add_user(user)
 
     def _add_user(self, user: User):
@@ -127,10 +130,15 @@ class TestObject:
             raise ValueError("User not found.")
         return user_id
 
+    def logout(self, token):
+        try:
+            user = self.user_sessions.pop(token)
+            print(f'User "{user.name}" succesfully logged out.')
+        except KeyError:
+            print('Given token was not valid.')
+
     def authenticate(self, login: str, password: str) -> str:
-        id = self.user_ids.get(login, None)
-        if not id:
-            raise ValueError("Unknown login")
+        id = self._get_userid_by_login(login)
         user = self.users[id]
         if not user.check_password(password):
             raise ValueError("Invalid Password")
@@ -170,10 +178,13 @@ class TestObject:
         self._check_rights(token, NONE)
         self.user_sessions.pop(token)
 
-    def put_user_password(self, token, new_password, user_id=None):
+    def put_user_password(self, token, new_password, old_password=None, user_id=None):
         self._check_rights(token, GUEST)
-        if user_id is None or user_id == self.user_sessions[token].user_id:
-            self.user_sessions[token].password = new_password
+        user = self.user_sessions[token]
+        if user_id is None or user_id == user.user_id:
+            if not user.check_password(old_password):
+                raise ValueError("Invalid Original Password")
+            user.password = new_password
         else:
             self._check_rights(token, ADMIN)
             selected_user = self._get_user_by_id(user_id)

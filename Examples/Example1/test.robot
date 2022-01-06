@@ -1,28 +1,31 @@
 *** Settings ***
-Documentation     A test suite for valid login.
+Documentation     This .robot file is a suite
 ...
 ...               Keywords are imported from the resource file
 Resource          keywords.resource
+Library           DateTime
+
 
 *** Test Cases ***
-Test 1
-    Login Admin
-    Print All Users
+Simple Test Case
+    [Documentation]    Shows some assertion keywords
+    Should Be Title Case    Robot Framework
+    Should Be Equal    Text123    Text123
+    Should Be True    5 + 5 == 10
 
-Test 2
-    Login Admin
-    Create New User
-    ...    name=Peter Parker
-    ...    login=spider
-    ...    password=123spiderman321
-    ...    right=user
-    Print All Users
+Test with Keywords
+    Store Text    Hail Our Robot
+    Add Text To Stored Text     Overlords!
+    Verify Stored Text Length    25
+    ${current_text}=    Get Stored Text
+    Should Be Equal    ${current_text}    Hail Our Robot Overlords!
 
-Test 3
-    Login User    spider    123spiderman321
-    ${details}   Get Userdetails
-    Log To Console    \n${details}
+Test for the year 2022
+    [Documentation]    Tests if it is still 2022...
+    ${date}=    Get Current Date    result_format=datetime
+    Log    ${date}
+    Should Be Equal As Strings    ${date.year}    2022
 
-Test Fails
-    Login User    spider    123spiderman321
-    Print All Users
+Test Case that fails
+    Check Correct Greeting    Hail Our Robot Overlords!
+    Check Correct Greeting    Hello World!
