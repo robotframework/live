@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.4 on darwin)" generated="20220106 14:16:49.339" rpa="false" schemaversion="2">
+<suite id="s1" name="Robot Interactive Console" source="/Users/rener/.vscode/extensions/robocorp.robotframework-lsp-0.35.0/src/robotframework_ls/vendored/robotframework_interactive/robot_interactive_console.robot">
+<test id="s1-t1" name="Default Task/Test">
+<kw name="Interpreter Main Loop" library="MainLoop">
+<kw name="Login Admin">
+<msg timestamp="20220106 14:16:50.709" level="FAIL">No keyword with name 'Login Admin' found.</msg>
+<status status="FAIL" starttime="20220106 14:16:50.709" endtime="20220106 14:16:50.709"/>
+</kw>
+<kw name="Print All Users">
+<status status="NOT RUN" starttime="20220106 14:16:50.711" endtime="20220106 14:16:50.711"/>
+</kw>
+<status status="PASS" starttime="20220106 14:16:49.366" endtime="20220106 14:16:54.069"/>
+</kw>
+<status status="PASS" starttime="20220106 14:16:49.365" endtime="20220106 14:16:54.070"/>
+</test>
+<status status="PASS" starttime="20220106 14:16:49.342" endtime="20220106 14:16:54.072"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Robot Interactive Console">Robot Interactive Console</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
