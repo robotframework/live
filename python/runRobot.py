@@ -57,6 +57,7 @@ try:
     file_list = json.loads(file_catalog)
 
     for file in file_list:
+        js.console.log(file)
         write_file(file)
 
     try:
@@ -74,9 +75,9 @@ try:
         sys.stdout = sys.__stdout__ = StringIO()
         sys.stderr = sys.__stderr__ = sys.__stdout__
         for file in file_list:
-            file_name, file_ext = os.path.splitext(file.fileName)  # TODO: does not work correctly
+            file_name, file_ext = os.path.splitext(file['fileName'])  # TODO: does not work correctly
             if file_ext == ".py":
-                js.console.log(f'reimporting: {file.fileName}')
+                js.console.log(f'reimporting: {file["fileName"]}')
                 m = import_module(file_name)
                 m = reload(m)
 
