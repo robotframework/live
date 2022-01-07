@@ -6,6 +6,15 @@
             "fileName": "test.robot"
         },
         {
+            "fileName": "variables.resource"
+        },
+        {
+            "fileName": "keywords.resource"
+        },
+        {
+            "fileName": "variables.py"
+        },
+        {
             "fileName": "page.html"
         },
         {
@@ -14,6 +23,27 @@
         {
             "fileName": "hidden.py",
             "show": false
+        },
+        {
+            "fileName": "lib.py"
+        },
+        {
+            "fileName": "variables.yaml"
+        },
+        {
+            "fileName": "data.json"
+        },
+        {
+            "fileName": "stuff.xml"
+        },
+        {
+            "fileName": "manual.md"
+        },
+        {
+            "fileName": "test.csv"
+        },
+        {
+            "fileName": "jsonisyaml.yaml"
         }
     ]
 }
