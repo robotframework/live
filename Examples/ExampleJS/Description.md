@@ -1,14 +1,3 @@
----
-__Advertisement :)__
-
-- __[pica](https://nodeca.github.io/pica/demo/)__ - high quality and fast image
-  resize in browser.
-- __[babelfish](https://github.com/nodeca/babelfish/)__ - developer friendly
-  i18n with plurals support and easy syntax.
-
-You will like those projects!
-
----
 
 # h1 Heading 8-)
 ## h2 Heading
@@ -142,11 +131,6 @@ Right aligned columns
 
 Autoconverted link https://github.com/nodeca/pica (enable linkify to see)
 
-## Plugins
-
-The killer feature of `markdown-it` is very effective support of
-[syntax plugins](https://www.npmjs.org/browse/keyword/markdown-it-plugin).
-
 
 ### [Emojies](https://github.com/markdown-it/markdown-it-emoji)
 
@@ -223,8 +207,4 @@ It converts "HTML", but keep intact partial entries like "xxxHTMLyyy" and so on.
 
 *[HTML]: Hyper Text Markup Language
 
-### [Custom containers](https://github.com/markdown-it/markdown-it-container)
-
-::: warning
-*here be dragons*
-:::
+### [Custom containers](https://github.com/markdown-it/markdown-it-
