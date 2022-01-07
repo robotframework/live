@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <keywordspec name="DataTypesLibrary" type="LIBRARY" format="ROBOT" scope="TEST" generated="2020-11-26T20:27:08Z" specversion="3" source="DataTypesLibrary.py" lineno="77">
-  <version></version>
+  <version>1.0.2</version>
   <doc>This Library has Data Types.
 
 It has some in ``__init__`` and others in the `Keywords`.

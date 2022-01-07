@@ -1,49 +1,15 @@
 {
-    "name": "HTML and JS Example",
+    "name": "XML Example",
     "description": "readme.md",
     "files": [
         {
-            "fileName": "test.robot"
+            "fileName": "XML_Test_Suite.robot"
         },
         {
-            "fileName": "variables.resource"
+            "fileName": "XML_Keywords.resource"
         },
         {
-            "fileName": "keywords.resource"
-        },
-        {
-            "fileName": "variables.py"
-        },
-        {
-            "fileName": "page.html"
-        },
-        {
-            "fileName": "script.js"
-        },
-        {
-            "fileName": "hidden.py",
-            "show": false
-        },
-        {
-            "fileName": "lib.py"
-        },
-        {
-            "fileName": "variables.yaml"
-        },
-        {
-            "fileName": "data.json"
-        },
-        {
-            "fileName": "stuff.xml"
-        },
-        {
-            "fileName": "manual.md"
-        },
-        {
-            "fileName": "test.csv"
-        },
-        {
-            "fileName": "jsonisyaml.yaml"
+            "fileName": "libdoc.xml"
         }
     ]
 }
