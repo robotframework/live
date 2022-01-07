@@ -1,6 +1,6 @@
 {
     "name": "HTML and JS Example",
-    "description": "readme.md",
+    "description": "Description.md",
     "files": [
         {
             "fileName": "test.robot"
