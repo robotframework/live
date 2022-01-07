@@ -1,0 +1,15 @@
+{
+    "name": "Behaviour-Driven Development (BDD)",
+    "description": "readme.md",
+    "files": [
+        {
+            "fileName": "Calculator_Test_Suite.robot"
+        },
+        {
+            "fileName": "Calc_keywords.resource"
+        },
+        {
+            "fileName": "Calculator.py"
+        }
+    ]
+}
