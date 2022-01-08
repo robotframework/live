@@ -2,6 +2,7 @@
     { "name": "Example 1", "dir": "Example1" },
     { "name": "Example 2", "dir": "Example2" },
     { "name": "BDD", "dir": "ExampleBDD" },
+    { "name": "FOR-Loops", "dir": "FOR_Loops" },
     { "name": "XML", "dir": "ExampleXML" },
     { "name": "JS", "dir": "ExampleJS" }
 ]
