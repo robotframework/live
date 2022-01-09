@@ -8,7 +8,7 @@ Library           CustomLibrary.py
 ${FULLNAME}     Administrator    #FULLNAME is a scalar variable containing the string 'Administrator'
 @{ALL USERS}    admin    hulk    dr.strange    captain    ironman    #List variable with 5 values.
 &{ADMIN}        login=admin    pwd=@RBTFRMWRK@    #Dictionary variable
-
+&{SPIDERMAN}    login=spider    name=Peter Parker    right=user    active=${True}
 
 *** Keywords ***
 Login Admin
@@ -19,13 +19,13 @@ Login Admin
 Verify User Details
     [Documentation]    Keyword that fetches user details based on a login
     ...                and verifies them against expected arguments.
-    [Arguments]   ${login}   ${exp_name}   ${exp_right}=user   ${exp_active}=True
+    [Arguments]   ${login}   ${name}   ${right}=user   ${active}=True
     ${user_id}=    Get User Id    ${login}
     ${user_details}=    Get User Details    ${user_id}
     Should Be Equal               ${user_details}[login]    ${login}
-    Should Be Equal               ${user_details}[name]     ${exp_name}
-    Should Be Equal               ${user_details}[right]    ${exp_right}
-    Should Be Equal As Strings    ${user_details}[active]   ${exp_active}
+    Should Be Equal               ${user_details}[name]     ${name}
+    Should Be Equal               ${user_details}[right]    ${right}
+    Should Be Equal As Strings    ${user_details}[active]   ${active}
 
 Print All Users
     ${users}=    Get All Users

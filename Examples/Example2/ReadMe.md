@@ -1,3 +1,5 @@
+## Advanced Example 2
+
 This example contains some more advanced features of Robot Framework.
 
 ### Test Object

@@ -1,4 +1,6 @@
-This example contains some very simple tests in Robot Framework.
+## Simple Example 1
+
+This example contains some simple tests in Robot Framework.
 
 ### Test Suite
 
