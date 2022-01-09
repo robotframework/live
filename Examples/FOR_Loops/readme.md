@@ -16,7 +16,7 @@ The FOR loop with enumeration works the same as the previous loop, but adds an i
 For in-range loops iterate over a range of numbers with a given increment.
 Start defaults to 0 and increment defaults to 1.
 
-#### FOR ${char} ${num} IN ZIP ${letters} ${numbers}
+### FOR ${char} ${num} IN ZIP ${letters} ${numbers}
 
 For in-zip loops iterate over two list like variables of the same size
 and picks the elements with the same index together.
