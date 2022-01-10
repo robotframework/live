@@ -22,7 +22,7 @@
         },
         {
             "fileName": "hidden.py",
-            "show": false
+            "hidden": true
         },
         {
             "fileName": "lib.py"
