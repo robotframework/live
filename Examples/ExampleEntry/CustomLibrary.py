@@ -26,14 +26,11 @@ class CustomLibrary:
         def post_new_user(self, token, name, login) -> str: ...
     '''
 
-    ROBOT_LIBRARY_SCOPE = 'GLOBAL'
-
     def __init__(self, tc_session_reset=True) -> None:
         '''When option for resetting the user session each test (`tc_session_reset`)
         is set to `True` a `Login User` has to be called each test.
         Otherwise, the library keeps the session for the whole robot framework suite.'''
         self.ROBOT_LIBRARY_SCOPE = 'TEST' if tc_session_reset else 'SUITE'
-        console(f'Library Scope is {self.ROBOT_LIBRARY_SCOPE}')
         self._session = None
         self.login = ''
         self.password = ''

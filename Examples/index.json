@@ -1,9 +1,9 @@
 [
-    { "name": "Example 1", "dir": "Example1" },
-    { "name": "Example 2", "dir": "Example2" },
+    { "name": "Simple Example", "dir": "ExampleEntry" },
+    { "name": "Simple Example 2", "dir": "Example1" },
+    { "name": "Advanced Example", "dir": "Example2" },
     { "name": "BDD", "dir": "ExampleBDD" },
     { "name": "Variables", "dir": "Variables"},
     { "name": "FOR-Loops", "dir": "FOR_Loops" },
-    { "name": "IF-Expression", "dir": "IF_Statement" },
-    { "name": "Weird Stuff", "dir": "ExampleJS" }
+    { "name": "IF-Expression", "dir": "IF_Statement" }
 ]
