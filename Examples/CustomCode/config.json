@@ -1,0 +1,21 @@
+{
+    "name": "Advanced Example",
+    "description": "ReadMe.md",
+    "files": [
+        {
+            "fileName": "TestSuite.robot"
+        },
+        {
+            "fileName": "keywords.resource"
+        },
+        {
+            "fileName": "variables.resource"
+        },
+        {
+            "fileName": "CustomLibrary.py"
+        },
+        {
+            "fileName": "CustomLibrary.py"
+        }
+    ]
+}

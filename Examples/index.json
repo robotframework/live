@@ -5,5 +5,6 @@
     { "name": "BDD-Example", "dir": "ExampleBDD" },
     { "name": "Variables", "dir": "Variables"},
     { "name": "FOR-Loops", "dir": "FOR_Loops" },
-    { "name": "IF-Expression", "dir": "IF_Statement" }
+    { "name": "IF-Expression", "dir": "IF_Statement" },
+    { "name": "Custom", "dir": "CustomCode" }
 ]
