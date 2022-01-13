@@ -6,7 +6,7 @@
             "fileName": "TestSuite.robot"
         },
         {
-            "fileName": "Keywords.resource"
+            "fileName": "keywords.resource"
         },
         {
             "fileName": "CustomLibrary.py"
