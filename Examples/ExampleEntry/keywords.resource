@@ -24,6 +24,9 @@ Verify Valid Login
     ${name}=    Get User Name
     Should Be Equal    ${name}    ${exp_full_name}
 
+Verify Unauthorised Access
+    Run Keyword And Expect Error    PermissionError*    Get Server Version
+
 Login Admin
     [Documentation]    'Login Admin' is a Keyword.
     ...                It calls 'Login User' from 'CustomLibrary.py'

@@ -1,5 +1,5 @@
 *** Settings ***
-Library    CustomLibrary
+Library    PythonKeywords
 
 *** Keywords ***
 Say Hello World

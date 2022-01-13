@@ -3,10 +3,10 @@
     "description": "ReadMe.md",
     "files": [
         {
-            "fileName": "test.robot"
+            "fileName": "TestSuite.robot"
         },
         {
-            "fileName": "keywords.resource"
+            "fileName": "Keywords.resource"
         },
         {
             "fileName": "CustomLibrary.py"
