@@ -15,6 +15,6 @@ Login User with Password
 Denied Login with Wrong Password
     [Tags]    negative
     Connect to Server
-    Run Keyword And Expect Error    *Invalid Password    Login User    ironman    0987654321
+    Run Keyword And Expect Error    *Invalid Password    Login User    ironman    123
     Verify Unauthorised Access
     [Teardown]    Close Server Connection
