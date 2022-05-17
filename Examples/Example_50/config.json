@@ -7,6 +7,9 @@
         },
         {
             "fileName": "keywords.resource"
+        },
+        {
+            "fileName": "new.robot"
         }
     ]
 }
