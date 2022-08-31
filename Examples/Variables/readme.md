@@ -9,7 +9,7 @@ It does not matter if the variable contains a list, object, dictionary or just a
 
 ### @{List-Like} Variables
 
-Lists or list-like variables, wich can be iterated, can be "unpacked".
+Lists or list-like variables, which can be iterated, can be "unpacked".
 A variable containing a list with a $ sign as prefix is still a single variable.
 A variable containing a list with a @ sign is unpacked and handled as multiple values.
 You can compare it with a box of 10 cookies. ${box} is just the box, with all the 10 cookies inside.
