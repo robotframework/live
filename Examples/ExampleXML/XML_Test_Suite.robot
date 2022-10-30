@@ -19,7 +19,7 @@ Check all DataTypes
     FOR    ${datatype}    IN    @{datatypes}
         IF    $datatype.tag == enum
             Log To Console    Enum Found
-        ELSE IF    $datatype.tag == typeddict
+        ELSE IF    $datatype.tag == "typeddict"
             Log To Console    Typeddict Found
         END
         Log Element    ${datatype}
