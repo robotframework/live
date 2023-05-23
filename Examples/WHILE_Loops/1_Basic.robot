@@ -24,13 +24,10 @@ Lonkero hangover
     Log To Console    Let's go home 🛌🏼🥴
 
 Actual example
-    ${rc} =   Set Variable    1
+    ${rc}=   Set Variable    1
     WHILE    ${rc} != 0
-        ${rc} =    Keyword that returns zero on success
+        ${rc}=    Keyword that returns zero on success
     END
-
-
-
 
 *** Keywords ***
 Keyword that returns zero on success
