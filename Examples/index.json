@@ -6,5 +6,6 @@
     { "name": "Variables", "dir": "Variables"},
     { "name": "FOR-Loops", "dir": "FOR_Loops" },
     { "name": "IF-Expression", "dir": "IF_Statement" },
+    { "name": "WHILE-Loops", "dir": "WHILE-Loops" },
     { "name": "Custom", "dir": "CustomCode" }
 ]
