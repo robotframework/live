@@ -1,0 +1,15 @@
+{
+    "name": "WHILE_Loops",
+    "description": "readme.md",
+    "files": [
+        {
+            "fileName": "1_Basic.robot"
+        },
+        {
+            "fileName": "2_Limits.robot"
+        },
+        {
+            "fileName": "3_Nesting.robot"
+        }
+    ]
+}
