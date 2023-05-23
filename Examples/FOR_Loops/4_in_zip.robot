@@ -1,10 +1,26 @@
+*** Settings ***
+Library    Collections
+
 *** Variables ***
-@{First Name}    Bruce     Steve     Peter
-@{Last Name}     Banner    Rogers    Parker
+@{first_name}    Bruce     Steve     Peter
+@{last_name}     Banner    Rogers    Parker
 
 *** Test Cases ***
 Combines two loops
     Log To Console   Full Names:
-    FOR    ${first}    ${last}    IN ZIP    ${First Name}    ${Last Name}
+    FOR    ${first}    ${last}    IN ZIP    ${first_name}    ${last_name}
+        Log To Console    ${first} ${last}
+    END
+
+Combines two loops of different lengths
+    Append To List    ${first_name}    Wade
+    Log To Console   Full Names:
+    FOR    ${first}    ${last}    IN ZIP    ${first_name}    ${last_name}
+        Log To Console    ${first} ${last}
+    END
+    
+    Append To List    ${last_name}    Wilson
+    Log To Console   Full Names:
+    FOR    ${first}    ${last}    IN ZIP    ${first_name}    ${last_name}
         Log To Console    ${first} ${last}
     END
