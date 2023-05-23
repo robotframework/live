@@ -6,6 +6,7 @@
     { "name": "Variables", "dir": "Variables"},
     { "name": "FOR-Loops", "dir": "FOR_Loops" },
     { "name": "IF-Expression", "dir": "IF_Statement" },
-    { "name": "WHILE-Loops", "dir": "WHILE-Loops" },
+    { "name": "WHILE-Loops", "dir": "WHILE_Loops" },
+    { "name": "TRY/EXCEPT Syntax", "dir": "TRY_EXCEPT_Syntax" },
     { "name": "Custom", "dir": "CustomCode" }
 ]

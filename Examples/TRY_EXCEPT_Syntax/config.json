@@ -1,0 +1,18 @@
+{
+    "name": "TRY_EXCEPT_Syntax",
+    "description": "readme.md",
+    "files": [
+        {
+            "fileName": "1_Basic.robot"
+        },
+        {
+            "fileName": "2_Patterns.robot"
+        },
+        {
+            "fileName": "3_Capture.robot"
+        },
+        {
+            "fileName": "4_Else_Finally.robot"
+        }
+    ]
+}
