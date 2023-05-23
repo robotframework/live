@@ -27,7 +27,9 @@ Test with some Collections keywords
     Append To List    ${list}    4    5    6
     ${list2}=    Create List    7    8    9
     ${new_list}=    Combine Lists    ${list}    ${list2}
-    ${reversed}=    Reverse List    ${new_list}
+    ${reversed}=    Copy List    ${new_list}
+    Reverse List    ${reversed}
+    Log To Console    ${new_list}
     Log To Console    ${reversed}
 
 Test to access list entries
